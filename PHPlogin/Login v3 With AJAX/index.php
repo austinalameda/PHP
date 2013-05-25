@@ -18,7 +18,7 @@
   $data = mysqli_query($dbc, $query);
 
   // Loop through the array of user data, formatting it as HTML
-  echo '<fieldset><legend>Member List</legend><table border="1">';
+  echo '<center><legend><strong>Member List</strong></legend><table border="1">';
   while ($row = mysqli_fetch_array($data)) {
     if (isset($_SESSION['user_id'])) {
       echo '<tr><td>' . $row['username'] . '</td><td>' . $row['join_date'] . '</td></tr>';
@@ -28,7 +28,7 @@
     }
   }
   echo '</table>';
-  echo '</fieldset>';
+  echo '</center>';
 
   mysqli_close($dbc);
 ?>
