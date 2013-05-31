@@ -23,13 +23,13 @@ $(function()
 			}
 			if (password2 == "") 
 			{
-            $("label#password2_error").show();
-            $("input#password2").focus();
+				$("label#password2_error").show();
+				$("input#password2").focus();
 			}
 			if (password1 != password2 && password1 != "" && password2 != "") 
 			{
-		    $("label#password_error").show();
-            $("input#password2").focus();
+				$("label#password_error").show();
+				$("input#password2").focus();
 			}
 			return false;
 		}
@@ -56,9 +56,7 @@ $(function()
 		});
   
 		// adds new user to table without refresh
-		$.post("updatetable.php", {
-		username: $('#username').val(),
-		}, function(response2)
+		$.get("membertable.php", function(response2)
 		{
 			setTimeout("finishAjax2('Info2', '"+escape(response2)+"')", 450);
 		});

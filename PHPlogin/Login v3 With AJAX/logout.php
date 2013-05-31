@@ -24,4 +24,8 @@
 	// Redirect to the home page
 	$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/index.php';
 	header('Location: ' . $home_url);
+	
+	echo '<div id="nav_menu"><hr />' . '&#10084;<a href="index.php">Home</a>&#10084;' . 
+		'<a href="signupAJAX.php">Sign Up</a>&#10084;' .
+		'<a href="loginAJAX.php">Log In</a>&#10084;' . '<hr /></div>';
 ?>
