@@ -1,7 +1,7 @@
 <?php
 // ---------------------------------------- Updates member table ----------------------------------------
-	require_once('connectvars.php');
-	if($_REQUEST)
+	require_once 'connectvars.php';
+	if ($_POST)
 	{
 		// Connect to the database 
 		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die (mysqli_error()); 
@@ -14,7 +14,7 @@
 		while ($row = mysqli_fetch_array($data))
 		{
 			// Appends new user to top of table in a red font
-			if($table == "")
+			if ($table == "")
 			{
 				$table = $table . '<tr><td><font color="red">' . $row['username'] . '</td></tr></font>';
 			}
@@ -30,7 +30,7 @@
 		}
 		else 
 		{
-			echo '1';
+			echo '0';
 		}	
 	}
 ?>

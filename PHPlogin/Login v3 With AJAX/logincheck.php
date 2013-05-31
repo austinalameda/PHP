@@ -1,11 +1,11 @@
 <?php
 // ---------------------------------------- Verifies username/password combo are valid ----------------------------------------
-	require_once('connectvars.php');
-	if($_REQUEST)
+	require_once 'connectvars.php';
+	if ($_POST)
 	{
 		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die (mysqli_error());
-		$username 	= mysqli_real_escape_string($dbc, trim($_REQUEST['username']));
-		$password   = mysqli_real_escape_string($dbc, trim($_REQUEST['password']));
+		$username 	= mysqli_real_escape_string($dbc, trim($_POST['username']));
+		$password   = mysqli_real_escape_string($dbc, trim($_POST['password']));
 		$query = "SELECT user_id, username FROM login_info WHERE username = '$username' AND password = SHA('$password')";
 		$data = mysqli_query($dbc, $query);
 	

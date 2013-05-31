@@ -1,10 +1,9 @@
 <?php
 // ---------------------------------------- User login page ----------------------------------------
-	require_once('startsession.php');
+	require_once 'startsession.php';
 	$page_title = 'Log In';
-	require_once('header.php');
-	require_once('connectvars.php');
-	require_once('navmenu.php');
+	require_once 'header.php';
+	require_once 'navmenu.php';
 ?>
   
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -22,7 +21,7 @@
 	{
 		var username = $("#username").val();
 		var password = $("#password").val();
-		if(username.length > 0 && password.length > 0) 
+		if (username.length > 0 && password.length > 0) 
 		{
 			$.post("logincheck.php", {
 			username: $('#username').val(),
@@ -31,13 +30,13 @@
 			{
 				$('#Info').html(unescape(response));
 				var valid = $("#Info").html();
-				if( valid > 0) 
+				if (valid == 0) 
 				{
-					location.reload();
+					$("label#username_error").show();
 				}
 				else 
 				{
-					$("label#username_error").show();
+					location.reload();
 				}
 			});
 			return false;
@@ -82,5 +81,5 @@
 		// Shown if user is logged in
 		echo('<p class="login">You are logged in as <b><font color ="red">' . $_SESSION['username'] . '</b></font>.</p>');
 	}
-	require_once('footer.php');
+	require_once 'footer.php';
 ?>

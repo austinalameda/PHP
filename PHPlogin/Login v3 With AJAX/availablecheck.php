@@ -1,10 +1,10 @@
 <?php
 // ---------------------------------------- Checks if username already taken ----------------------------------------
-	require_once('connectvars.php');
-	if($_REQUEST)
+	require_once 'connectvars.php';
+	if ($_POST)
 	{
 		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die (mysqli_error());
-		$username 	= $_REQUEST['username'];
+		$username 	= $_POST['username'];
 		$query = "SELECT * FROM login_info WHERE username = '".strtolower($username)."'";
 		$data = mysqli_query($dbc, $query);
 	

@@ -72,7 +72,7 @@ function finishAjax2(id, response)
 {
 	$('#'+id).html(unescape(response));
 	var valid = $("#Info2").html();
-	if( valid > 0) 
+	if (valid == '0') 
 	{
        alert("Error processing request.");
 	}

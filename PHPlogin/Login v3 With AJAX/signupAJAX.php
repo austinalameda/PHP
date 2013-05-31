@@ -1,10 +1,10 @@
 <?php
 // ---------------------------------------- New user registarion page ----------------------------------------
-	require_once('startsession.php');
+	require_once 'startsession.php';
 	$page_title = 'Sign Up';
-	require_once('header.php');
-	require_once('connectvars.php');
-	require_once('navmenu.php'); 
+	require_once 'header.php';
+	require_once 'connectvars.php';
+	require_once 'navmenu.php'; 
 ?>
   
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 		$('#submit_btn').attr('disabled', 'disabled');
 		$('#submit_btn').hide();
 		var username = $("#username").val();
-		if(username.length > 0)
+		if (username.length > 0)
 		{
 			$('#Loading').show();
 			$.post("availablecheck.php", {
@@ -45,15 +45,15 @@
 	{
 		$('#'+id).html(unescape(response));
 		var valid = $("#Info").html();
-		if( valid > 0) 
+		if (valid == 0) 
+		{
+			$("label#username_error2").fadeIn(1000);
+		}
+		else 
 		{
 			$('#submit_btn').removeAttr('disabled');
 			$('#submit_btn').fadeIn(1000);
 			$("label#username_error2").hide();
-		}
-		else 
-		{
-			$("label#username_error2").fadeIn(1000);
 		}
 	}   
 </script>
@@ -88,7 +88,7 @@
 		</form>
 	</div>
 	
-	<center><span id="Members">
+	<center><div id="Members">
 </html>
 
 <?php
@@ -115,10 +115,10 @@
 ?>
 
 <html>
-	</span></center>
+	</div></center>
 	<center><div id="Info2"></div></center>
 </html>
 
 <?php
-	require_once('footer.php');
+	require_once 'footer.php';
 ?>

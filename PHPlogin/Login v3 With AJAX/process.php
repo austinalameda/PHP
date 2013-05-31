@@ -1,6 +1,6 @@
 <?php
 // ---------------------------------------- Adds new user to database ----------------------------------------
-	require_once('connectvars.php');
+	require_once 'connectvars.php';
 	if (isset($_POST['username'], $_POST['password1'], $_POST['password2'])) 
 	{
 		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die (mysqli_error());
