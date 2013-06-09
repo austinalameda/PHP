@@ -1,0 +1,52 @@
+body, td, th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+}
+
+.footer {
+  text-align: center;
+  font-size: 80%;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+  font-style: italic;
+  display: inline;
+}
+
+.login {
+  font-style: italic;
+}
+
+form label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+
+td.label {
+  font-weight: bold;
+}
+
+a:link, a:visited {
+  color: blue;
+}
+
+ a:hover {
+ color: grey;
+}
+ 
+.nav_button {
+  display: inline;
+  border: 1px solid grey;
+  padding: 5px 5px 5px 5px;
+  margin: 3px 3px 3px 3px;
+  background-color: #d6d6d6;
+}
+
+.nav_button a:hover {
+  color: blue;
+}
